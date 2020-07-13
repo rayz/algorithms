@@ -1,18 +1,17 @@
 from heapq import heappush, heappop
 from collections import defaultdict
 
-def dijkstra(N, graph, K):
+def dijkstra(n, graph, K):
     """
     Dijkstra algorithm to find shortest path from source 
     
     Parameters:
-    N (int): # of nodes
-    Graph (2darray): v1, v2, cost
-    K (int): source node
+        n (int): # of nodes
+        Graph (2darray): v1, v2, cost
+        K (int): source node
 
     Returns:
-    dist (dict): contains the shortest path to each node from K
-    
+        dist (dict): contains the shortest path to each node from K
     """
 
     weight = defaultdict(dict)

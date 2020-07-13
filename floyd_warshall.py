@@ -1,9 +1,14 @@
 
-"""
-Floyd Warshall Implementation for Undirected Graph
-Comment line 11 out for directed graph
-"""
 def floyd_warshall(n, graph):
+    """
+    Floyd Warshall Implementation for Undirected Graph
+    Parameters:
+        n: # of nodes
+        graph: [[v1,v2,cost] ... ]
+    
+    Return:
+        dp: matrix containing all pair shortest paths
+    """
 
     dp = [[float('inf')] * n for _ in range(n)]
     for v1, v2 ,cost in graph:
@@ -20,14 +25,14 @@ def floyd_warshall(n, graph):
                 dp[i][j] = min(dp[i][j], dp[i][k] + dp[k][j])
 
     
-    for row in dp:
-        print(row)
-
+    return dp
 
 
 def main():
-#                     v1,v2,cost 
-    floyd_warshall(4, [[0,1,8],[1,2,1],[2,0,4],[0,3,1],[3,2,9],[3,1,2]])
+    dp = floyd_warshall(4, [[0,1,8],[1,2,1],[2,0,4],[0,3,1],[3,2,9],[3,1,2]])
+    
+    for row in dp:
+        print(row)
 
 
 main()
