@@ -3,10 +3,10 @@
 Floyd Warshall Implementation for Undirected Graph
 Comment line 11 out for directed graph
 """
-def floyd_warshall(n, edges):
+def floyd_warshall(n, graph):
 
     dp = [[float('inf')] * n for _ in range(n)]
-    for v1, v2 ,cost in edges:
+    for v1, v2 ,cost in graph:
         dp[v1][v2] = cost
         dp[v2][v1] = cost
 
