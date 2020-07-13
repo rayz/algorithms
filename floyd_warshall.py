@@ -6,9 +6,9 @@ Comment line 11 out for directed graph
 def floyd_warshall(n, edges):
 
     dp = [[float('inf')] * n for _ in range(n)]
-    for e1, e2 ,cost in edges:
-        dp[e1][e2] = cost
-        dp[e2][e1] = cost
+    for v1, v2 ,cost in edges:
+        dp[v1][v2] = cost
+        dp[v2][v1] = cost
 
     for i in range(n):
         dp[i][i] = 0
@@ -25,6 +25,7 @@ def floyd_warshall(n, edges):
 
 
 def main():
+#                     v1,v2,cost 
     floyd_warshall(4, [[0,1,8],[1,2,1],[2,0,4],[0,3,1],[3,2,9],[3,1,2]])
 
 
