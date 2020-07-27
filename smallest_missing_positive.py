@@ -10,6 +10,7 @@ def first_missing_positive(nums):
         else:
             i += 1
 
+    print(nums)
 
 
     for i in range(n):
@@ -23,6 +24,7 @@ def first_missing_positive(nums):
 def main():
     print(first_missing_positive([-3, 1, 5, 4, 2]))
     print(first_missing_positive([-5,-3,-6,-2, 3]))
+    print(first_missing_positive([0, -3,-2,0,1,2,3,4,5]))
 
 
 main()
