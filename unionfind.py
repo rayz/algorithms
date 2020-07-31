@@ -1,10 +1,8 @@
-from collections import defaultdict
-
 class UnionFind:
 
     def __init__(self):
         self.parents = {}
-        self.sz = defaultdict(lambda:1) #size of every component
+        self.sz = {}
         self.size = 0
 
 
@@ -12,13 +10,13 @@ class UnionFind:
         if a in self.parents:
             return
         self.size += 1
-        self.parents[a] = -1
+        self.sz[a] = 1
+        self.parents[a] = a 
 
     def find(self, a):
-        if self.parents[a] == -1:
-            return a
-        #path compression
-        self.parents[a] = self.find(self.parents[a])
+        if self.parents[a] != a:
+            self.parents[a] = self.find(self.parents[a])
+
         return self.parents[a]
 
     def join(self, a, b):
