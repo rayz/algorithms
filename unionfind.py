@@ -25,7 +25,7 @@ class UnionFind:
         pa, pb = self.find(a), self.find(b)
         if pa == pb:
             return
-        if self.sz[pa] > self.size[pb]:
+        if self.sz[pa] > self.sz[pb]:
             self.parents[pb] = pa
             self.sz[pa] += self.sz[pb]
         else:
