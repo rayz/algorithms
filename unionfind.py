@@ -27,10 +27,10 @@ class UnionFind:
             return
         if self.sz[pa] > self.size[pb]:
             self.parents[pb] = pa
-            self.sz[pb] += self.sz[pa]
+            self.sz[pa] += self.sz[pb]
         else:
             self.parents[pa] = pb 
-            self.sz[pa] += self.sz[pb]
+            self.sz[pb] += self.sz[pa]
 
         self.size -= 1
 
