@@ -22,7 +22,7 @@ class UnionFind:
     def join(self, a, b):
         pa, pb = self.find(a), self.find(b)
         if pa == pb:
-            return
+            return False
         if self.sz[pa] > self.sz[pb]:
             self.parents[pb] = pa
             self.sz[pa] += self.sz[pb]
@@ -31,6 +31,8 @@ class UnionFind:
             self.sz[pb] += self.sz[pa]
 
         self.size -= 1
+
+        return True
 
 
 
