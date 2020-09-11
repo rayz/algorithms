@@ -44,14 +44,15 @@ int main(){
         cg = v[mi];
         seen[mi] = 1;
         cout << cg << ' ';
-        for(int i = 0; i < n-1; i++){
+        for(int i = 1; i < n; i++){
             int curr = 0;
             int idx = 0;
             for(int j = 0; j < n; j++){
-               if(!seen[j] && gcd(cg, v[j]) > curr){
-                   curr = gcd(cg, v[j]);
-                   idx = j;
-               }
+                int cand = gcd(cg, v[j]);   
+                if(!seen[j] && cand > curr){
+                    curr = cand;
+                    idx = j;
+                }
             }
             seen[idx] = 1;
             cg = curr;
